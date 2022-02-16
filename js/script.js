@@ -1,3 +1,7 @@
+$('#registerFormContainer').hide();
+$('#hall-of-fame').hide();
+$('#btn-get-list').hide();
+
 function generateField(numCol, numRow) {
 
     let numberCell = numCol * numRow;
@@ -476,11 +480,18 @@ $('#btn-register').click(function () {
         .then(res => {
             if (res.status) {
                 $('#registerResult').text("Registration has been successful");
+                $('#loginFormContainer').show();
+                $('#registerFormContainer').hide();
             }
         })
         .catch(err => console.log(err))
     }
 })
+
+$('#btn-register-form').click(function() {
+    $('#loginFormContainer').hide();
+    $('#registerFormContainer').show();
+});
 
 $('#btn-login').click(function () {
     const login = $('#loginForm-login').val();
@@ -501,7 +512,10 @@ $('#btn-login').click(function () {
         .then(res => res.json())
         .then(res => {
             if (res.status) {
-                $('#loginResult').text("You are logged in. Login - ", res.userLogin);
+                $('#loginFormContainer').hide();
+                $('#registerFormContainer').hide();
+                $('#btn-get-list').show();
+                $('#loginResult').text(`You are logged in as ${res.userLogin}`);
                 playerID = res.userID;
                 play();
             }
@@ -520,20 +534,13 @@ $('#btn-get-list').click(function () {
         .then(res => {
             console.log('res from API', res.data);
             if (res && res.data) {
-                res.data.forEach(item => {
-                    let userRow = $('<div></div>');
-                    userRow.attr('class', 'user-row');
-                    let userName = $('<p></p>');
-                    userName.attr('class', 'user-name');
-                    userName.text(item.login)
-                    let userResult = $('<p></p>');
-                    userResult.attr('class', 'user-result');
-                    userResult.text(item.bestScore || 0)
-                    userRow.append(userName)
-                    userRow.append(userResult)
-                    $('#resultList').append(userRow)
+                filteredData = res.data.filter(item => !!item.bestScore);
+                filteredData = filteredData.sort((a,b) => a.bestScore - b.bestScore);
+                filteredData.forEach((item, index) => {
+                    $('#resultList').append(`<tr><td>${index + 1}</td><td>${item.login}</td><td>${item.bestScore}</td></tr>`);
 
-                })
+                });
+                $('#hall-of-fame').show();
             }
 
         })

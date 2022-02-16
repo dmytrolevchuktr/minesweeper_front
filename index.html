@@ -3,34 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<form id="loginForm">
-    LOGIN FORM
-    <input type="text" id="loginForm-login">
-    <input type="password" id="loginForm-password">
-    <button type="button" id="btn-login">
-        Login
-    </button>
-    <p id="loginResult"></p>
-</form>
-<form id="registerForm">
-    Register FORM
-    <input type="text" id="registerForm-login">
-    <input type="password" id="registerForm-password">
-    <button type="button" id="btn-register">
-        Register
-    </button>
-    <p id="registerResult"></p>
-</form>
-<div id="list-of-users">
-    <button type="button" id="btn-get-list">
-        Update user list
-    </button>
-    <div id="resultList">
-
+    <div class="container" id="loginFormContainer">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+              <div class="card-body p-4 p-sm-5">
+                <h5 class="card-title text-center mb-5 fw-light fs-5">Log In / Register</h5>
+                <form id="loginForm">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="loginForm-login" placeholder="Username">
+                        <label for="loginForm-login">Username</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="loginForm-password" placeholder="Password">
+                        <label for="loginForm-password">Password</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary btn-login text-uppercase fw-bold" id="btn-login">
+                            Log in
+                        </button>
+                    </div>
+                    <hr class="my-4">
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary btn-login text-uppercase fw-bold" id="btn-register-form">
+                            Register
+                        </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+    <p id="loginResult"></p>
+    <div class="container" id="registerFormContainer">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+              <div class="card-body p-4 p-sm-5">
+                <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+                <form id="registerForm">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="registerForm-login" placeholder="Username">
+                        <label for="registerForm-login">Username</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="registerForm-password" placeholder="Password">
+                        <label for="registerForm-password">Password</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary btn-login text-uppercase fw-bold" id="btn-register">
+                            Register
+                        </button>
+                    </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <p id="registerResult"></p>
+
+<div id="list-of-users">
+    <button type="button" id="btn-get-list" class="btn btn-primary btn-login text-uppercase fw-bold">
+        View Hall of Fame
+    </button>
+    <table class="table table-striped" id="hall-of-fame">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody id="resultList">
+
+        </tbody>
+    </table>
 </div>
 <div id="battleField">
 
