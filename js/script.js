@@ -247,8 +247,8 @@ function play() {
     numberColumns = 30;
     numberRows = 16;
     level = 1;
-    // numberMine = Math.floor(numberColumns * numberRows * (0.05 + 0.05 * level));
-    numberMine = 5;
+    numberMine = Math.floor(numberColumns * numberRows * (0.05 + 0.05 * level));
+
     getField = generateField(numberColumns, numberRows);
 
     arrCheckedField = []; // check status. 0 - opened, 1 - closed, 2 - marked
@@ -268,12 +268,8 @@ function play() {
     restartBtn.attr('id', 'restartBtn');
     restartBtn.attr('type', 'button');
     restartBtn.attr('value', 'Restart the game');
-    restartBtn.attr('class', 'btnNotActive');
-
-
-    let checkedMineDiv = $('<p></p>');
-    // checkedMineDiv.innerHTML = `You have checked ${markedMines} form ${numberMine} mines`;
-    checkedMineDiv.text(`You have checked ${markedMines} from ${numberMine} mines`);
+    restartBtn.attr('disabled', true);
+    restartBtn.attr('class', 'btn btn-primary btn-login text-uppercase fw-bold');
 
 
     let fieldDiv = $('<div></div>');
@@ -297,10 +293,12 @@ function play() {
 
     }
 
-
-    $('#battleField').append(restartBtn);
-    $('#battleField').append(checkedMineDiv);
+    // let checkedMineDiv = $('<p></p>');
+    // checkedMineDiv.text(`You have checked ${markedMines} from ${numberMine} mines`);
+    // $('#battleField').append(checkedMineDiv);
     $('#battleField').append(fieldDiv);
+    $('#battleField').append('<br/><br/>');
+    $('#battleField').append(restartBtn);
 
 
     let tmpEvent = $('#mainField');
@@ -349,8 +347,7 @@ function play() {
                 switch (e.which) {
                     case 1:
                         gameOnPlay = true;
-                        $('#restartBtn').removeClass('btnNotActive');
-                        $('#restartBtn').addClass('btnActive');
+                        $('#restartBtn').attr('disabled', null);
 
                         if (arrCheckedField[i][j] == 1 && !gameIsOver) {
                             arrCheckedField[i][j] = 0;
@@ -393,8 +390,7 @@ function play() {
                         break;
                     case 3:
                         gameOnPlay = true;
-                        $('#restartBtn').removeClass('btnNotActive');
-                        $('#restartBtn').addClass('btnActive');
+                        $('#restartBtn').attr('disabled', null);
 
                         if (arrCheckedField[i][j] == 1  && !gameIsOver ) {
                             $(this).addClass("cellDiv-marked");
