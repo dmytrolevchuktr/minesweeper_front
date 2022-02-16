@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.btnNotActive {
+    opacity: 0.4;
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.btnActive {
+    opacity: 1;
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.cellDiv {
+    float: left;
+    height: 22px;
+    width: 22px;
+    /*background-color: #aaaaaa;*/
+    background-image: url("../img/cell.jpg");
+    background-size: cover;
+    border: 1px solid #777777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open0 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-color: #cccccc;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open1 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine1.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open2 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine2.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open3 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine3.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open4 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine4.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open5 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine5.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open6 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine6.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open7 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine7.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-open8 {
+    float: left;
+    height: 22px;
+    width: 22px;
+    background-image: url("../img/mine8.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-mine {
+    float: left;
+    height: 22px;
+    width: 22px;
+    /*background-color: #aaaaaa;*/
+    background-image: url("../img/cell_mine.jpg");
+    background-size: cover;
+    border: 1px solid #777777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-firstMine {
+    float: left;
+    height: 22px;
+    width: 22px;
+    /*background-color: #aaaaaa;*/
+    background-image: url("../img/isMine.png");
+    background-size: cover;
+    border: 1px solid #777777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellDiv-marked {
+    background-image: url("../img/cell_marked.jpg");
+    background-size: cover;
+}
+
+.rowDiv {
+
+}
+
+.rowDiv:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
