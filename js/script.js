@@ -1,6 +1,9 @@
 $('#registerFormContainer').hide();
 $('#hall-of-fame').hide();
 $('#btn-get-list').hide();
+$('#registerResult').hide();
+$('#loginResult').hide();
+
 
 function generateField(numCol, numRow) {
 
@@ -480,6 +483,7 @@ $('#btn-register').click(function () {
         .then(res => {
             if (res.status) {
                 $('#registerResult').text("Registration has been successful");
+                $('#registerResult').show();
                 $('#loginFormContainer').show();
                 $('#registerFormContainer').hide();
             }
@@ -516,6 +520,8 @@ $('#btn-login').click(function () {
                 $('#registerFormContainer').hide();
                 $('#btn-get-list').show();
                 $('#loginResult').text(`You are logged in as ${res.userLogin}`);
+                $('#loginResult').show();
+                $('#registerResult').hide();
                 playerID = res.userID;
                 play();
             }
